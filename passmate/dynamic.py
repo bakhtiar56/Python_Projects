@@ -28,26 +28,27 @@ upper_letters = [u for u in string.ascii_uppercase]
 # initialize symbols list
 special_letters = [s for s in string.punctuation]
 choice = ["n", "l", "u", "s"]
+sequence=[]
 
 
 
 # while length of the password doesnt become the length of the 
 #command line argument for length,
 # keep on adding random elements from the randomly chosen list
-while len(rand) < args.length:
+while len(sequence) < args.length:
     outcome = random.choice(choice)
     if outcome == "n":
-        rand.append(random.choice(numbers))
+        sequence.append(random.choice(numbers))
 
     if outcome == "l":
-        rand.append(random.choice(lower_letters))
+        sequence.append(random.choice(lower_letters))
 
     if outcome == "u":
-        rand.append(random.choice(upper_letters))
+        sequence.append(random.choice(upper_letters))
 
     if outcome == "s":
-        rand.append(random.choice(special_letters))
+        sequence.append(random.choice(special_letters))
 
 
 print("Your random password is: ")
-print("".join(rand))
+print("".join(sequence))
