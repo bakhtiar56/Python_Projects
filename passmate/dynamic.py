@@ -9,13 +9,13 @@ import argparse
 
 # initialize argparse for command-line arguments processing
 parser = argparse.ArgumentParser(description="A random password generator")
-parser.add_argument("-l", "--length", type=int, metavar="", help="length")
+parser.add_argument("-l", "--length", type=int, metavar="", help="length",default=10ssss)
 args = parser.parse_args()
 # initialize numbers list
 numbers = [str(n) for n in range(0, 10)]
-# initialize lower_letters list
+# initialize lower_case_letters list
 lower_letters = [l for l in string.ascii_lowercase]
-# initialize upper_letters list
+# initialize upper_case_letters list
 upper_letters = [u for u in string.ascii_uppercase]
 # initialize symbols list
 special_letters = [s for s in string.punctuation]
@@ -27,8 +27,9 @@ special_letters = set(special_letters)
 special_letters = special_letters.difference(se)
 special_letters = list(special_letters)
 rand = list()
-# while length of the password doesnt become 8
-# keep on adding random elements from the final list
+# while length of the password doesnt become the length of the 
+#command line argument for length,
+# keep on adding random elements from the randomly chosen list
 while len(rand) < args.length:
     outcome = random.choice(choice)
     if outcome == "n":
