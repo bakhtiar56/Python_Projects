@@ -1,15 +1,23 @@
 
+#A Random Password Generator v0.1
+#Functionalities present:
+#   User can set the length of password in command line argument
+#   User can get help on the usage of command line arguments
+#   User can recieve a password with a random sequence of alphabet,numbers and symbols
+#Functionalities to add:
+#   Add command line arguments to include and exclude
+#   certain characters from the password
+#   for example: -n to include only numbers
+#   and -nas to include all types of characters
+
 import random
 import string
 import argparse
-# this program asks user the length of the password
-# and whether to include brackets in the random generated password.
-# this is a hardcoded approach but I can easily transform it into dynamic by user input
-# and user can then select which characters type to include/exclude in the password
+
 
 # initialize argparse for command-line arguments processing
 parser = argparse.ArgumentParser(description="A random password generator")
-parser.add_argument("-l", "--length", type=int, metavar="", help="length",default=10ssss)
+parser.add_argument("-l", "--length", type=int, metavar="", help="length",default=10)
 args = parser.parse_args()
 # initialize numbers list
 numbers = [str(n) for n in range(0, 10)]
@@ -20,13 +28,9 @@ upper_letters = [u for u in string.ascii_uppercase]
 # initialize symbols list
 special_letters = [s for s in string.punctuation]
 choice = ["n", "l", "u", "s"]
-se = set(["(", ")", "[", "]", "{", "}"])
-# using set structure to exlude the user excluded characters from the
-# total list of characters which are to be included in the password'''
-special_letters = set(special_letters)
-special_letters = special_letters.difference(se)
-special_letters = list(special_letters)
-rand = list()
+
+
+
 # while length of the password doesnt become the length of the 
 #command line argument for length,
 # keep on adding random elements from the randomly chosen list
