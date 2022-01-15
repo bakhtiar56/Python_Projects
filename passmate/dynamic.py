@@ -16,7 +16,7 @@ import argparse
 
 
 # initialize argparse for command-line arguments processing
-parser = argparse.ArgumentParser(description="A random password generator")
+parser = argparse.ArgumentParser(description="A random password generator",prog="Pass_mate- Random Password Generator")
 parser.add_argument("-l", "--length", type=int, metavar="", help="length",default=10)
 args = parser.parse_args()
 # initialize numbers list
